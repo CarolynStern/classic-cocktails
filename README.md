@@ -1,0 +1,1 @@
+This project is a web-based cocktail search engine/ social media site for cocktail enthusiasts. Its functions include the ability to search through a database of cocktails, adding your own cocktails to the database, creating lists of cocktails, and viewing other users profiles. 
