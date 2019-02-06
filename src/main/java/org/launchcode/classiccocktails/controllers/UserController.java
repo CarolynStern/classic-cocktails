@@ -13,33 +13,24 @@ import javax.validation.Valid;
 @Controller
 @RequestMapping("user")
 public class UserController {
-    @RequestMapping(value = "add", method = RequestMethod.GET)
-public String add(Model model) {
+    @RequestMapping(value = "register", method = RequestMethod.GET)
+public String displayRegisterForm(Model model) {
     model.addAttribute(new User());
     model.addAttribute("title", "Register");
-    return "user/add";
+    return "user/register";
 }
 
-    @RequestMapping(value = "add", method = RequestMethod.POST)
-    public String add(Model model, @ModelAttribute @Valid User user,
+    @RequestMapping(value = "register", method = RequestMethod.POST)
+    public String addUser(Model model, @ModelAttribute @Valid User user,
                       Errors errors, String verify) {
 
-        model.addAttribute(user);
-        boolean passwordsMatch = true;
-        if (user.getPassword() == null || verify == null
-                || !user.getPassword().equals(verify)) {
-            passwordsMatch = false;
-            user.setPassword("");
-            model.addAttribute("verifyError", "Passwords must match");
+        if (errors.hasErrors()) {
+            return "user/register";
         }
 
-        if (!errors.hasErrors() && passwordsMatch) {
-            return "user/index";
-        }
-
-        return "user/add";
-
+        return "user/index";
     }
+
 
 
 }

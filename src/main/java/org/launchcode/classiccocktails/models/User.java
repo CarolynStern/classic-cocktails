@@ -2,13 +2,20 @@ package org.launchcode.classiccocktails.models;
 
 import org.hibernate.validator.constraints.Email;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
+@Entity
 public class User {
+    @Id
+    @GeneratedValue
+    private int userId;
+
     @NotNull
-@Size(min= 5, max= 15)
-private String username;
+    @Size(min= 5, max= 35)
+    private String username;
 
     @Email(message = "Invalid email address")
     private String email;
@@ -17,14 +24,18 @@ private String username;
     @Size(min=5, message = "Password must be at least 5 characters long")
     private String password;
 
-    public User(String username, String email, String password) {
+    public User(int id, String username, String email, String password) {
+        this.userId = id;
         this.username = username;
         this.email = email;
         this.password = password;
     }
 
-    public User() {}
+    public User(){}
 
+    public int getUserId() {
+        return userId;
+    }
     public String getUsername() {
         return username;
     }
