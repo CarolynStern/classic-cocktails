@@ -14,23 +14,31 @@ import javax.validation.Valid;
 @RequestMapping("user")
 public class UserController {
     @RequestMapping(value = "register", method = RequestMethod.GET)
-public String displayRegisterForm(Model model) {
-    model.addAttribute(new User());
-    model.addAttribute("title", "Register");
-    return "user/register";
-}
-
+    public String displayRegisterForm(Model model) {
+        model.addAttribute(new User());
+        model.addAttribute("title", "Register");
+        return "user/register";
+    }
     @RequestMapping(value = "register", method = RequestMethod.POST)
     public String addUser(Model model, @ModelAttribute @Valid User user,
-                      Errors errors, String verify) {
-
+                          Errors errors, String verify) {
         if (errors.hasErrors()) {
             return "user/register";
         }
-
         return "user/index";
     }
-
-
-
+    @RequestMapping(value = "login", method = RequestMethod.GET)
+    public String displayLoginForm(Model model) {
+        model.addAttribute(new User());
+        model.addAttribute("title", "Log in");
+        return "user/login";
+    }
+    @RequestMapping(value = "login", method = RequestMethod.POST)
+    public String loginUser(Model model, @ModelAttribute @Valid User user,
+                            Errors errors, String verify) {
+        if (errors.hasErrors()) {
+            return "user/login";
+        }
+        return "user/index";
+    }
 }
