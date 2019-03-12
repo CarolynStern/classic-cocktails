@@ -11,9 +11,9 @@
 <body>
 
 <nav th:fragment="navigation">
-    <a href="/search">Search Cocktails</a> |
-    <a href="/add">Add a Cocktail</a> |
-    <a href="/my-cocktail-lists">View Your Cocktail Lists</a>
+    <a th:href="@{/cocktail/search}">Search Cocktails</a> |
+    <a th:href="@{/cocktail/add}">Add a Cocktail</a> |
+    <a th:href="@{/cocktail-list}">View Your Cocktail Lists</a>
 </nav>
 
 </body>

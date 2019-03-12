@@ -1,4 +1,4 @@
-package org.launchcode.classiccocktails.models.forms;
+/*package org.launchcode.classiccocktails.models.forms;
 
 import org.launchcode.classiccocktails.models.CocktailFieldType;
 
@@ -33,3 +33,4 @@ public class SearchForm {
         this.keyword = keyword;
     }
 }
+*/

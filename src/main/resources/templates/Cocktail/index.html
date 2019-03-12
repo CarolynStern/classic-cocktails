@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments::navigation"></nav>
+
+<p th:unless="${cocktails} and ${cocktails.size()}">no cocktails :(</p>
+
+
+<table class="table">
+
+    <tr>
+        <th>Name</th>
+        <th>Ingredients</th>
+        <th>Category</th>
+    </tr>
+
+    <tr th:each="cocktail : ${cocktails}">
+        <td th:text="${cocktail.name}"></td>
+        <td th:text="${cocktail.ingredient}"></td>
+        <td th:text="${cocktail.category.name}"></td>
+    </tr>
+
+</table>
+
+<a href="/cocktail/add">Add</a> |
+<a href="/cocktail/remove">Remove</a>
+
+
+</body>
+</html>

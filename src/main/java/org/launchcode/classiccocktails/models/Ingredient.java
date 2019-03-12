@@ -1,6 +1,6 @@
-package org.launchcode.classiccocktails.models;
+/*package org.launchcode.classiccocktails.models;
 
-import java.util.ArrayList;
+
 
 public class Ingredient extends CocktailField {
 
@@ -8,3 +8,4 @@ public class Ingredient extends CocktailField {
         super(value);
     }
 }
+*/

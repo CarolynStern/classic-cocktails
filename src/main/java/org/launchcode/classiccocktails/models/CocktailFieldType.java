@@ -1,4 +1,4 @@
-package org.launchcode.classiccocktails.models;
+/*package org.launchcode.classiccocktails.models;
 
 public enum CocktailFieldType {
     NAME ("Name"),
@@ -17,3 +17,4 @@ public enum CocktailFieldType {
 
 }
 
+*/

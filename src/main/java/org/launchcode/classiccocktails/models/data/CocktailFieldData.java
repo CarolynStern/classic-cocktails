@@ -1,4 +1,4 @@
-package org.launchcode.classiccocktails.models.data;
+/*package org.launchcode.classiccocktails.models.data;
 
 import org.launchcode.classiccocktails.models.CocktailField;
 
@@ -34,3 +34,4 @@ public class CocktailFieldData<T extends CocktailField> {
     }
 
 }
+*/

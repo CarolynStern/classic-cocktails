@@ -1,4 +1,4 @@
-package org.launchcode.classiccocktails.models.data;
+/*package org.launchcode.classiccocktails.models.data;
 
 import org.launchcode.classiccocktails.models.*;
 
@@ -99,4 +99,4 @@ public class CocktailData {
     }
 }
 
-
+*/

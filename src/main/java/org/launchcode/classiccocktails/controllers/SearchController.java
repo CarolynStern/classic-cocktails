@@ -1,4 +1,4 @@
-package org.launchcode.classiccocktails.controllers;
+/*package org.launchcode.classiccocktails.controllers;
 
 import org.launchcode.classiccocktails.models.Cocktail;
 import org.launchcode.classiccocktails.models.CocktailFieldType;
@@ -41,3 +41,4 @@ public class SearchController {
     }
 
 }
+*/

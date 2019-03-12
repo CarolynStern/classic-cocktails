@@ -1,4 +1,4 @@
-package org.launchcode.classiccocktails.models;
+/*package org.launchcode.classiccocktails.models;
 
 public class Name extends CocktailField {
 
@@ -6,3 +6,4 @@ public class Name extends CocktailField {
         super(value);
     }
 }
+*/

@@ -1,6 +1,8 @@
 package org.launchcode.classiccocktails.controllers;
 
 import org.launchcode.classiccocktails.models.User;
+import org.launchcode.classiccocktails.models.data.UserDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -13,6 +15,9 @@ import javax.validation.Valid;
 @Controller
 @RequestMapping("user")
 public class UserController {
+    @Autowired
+    UserDao userDao;
+
     @RequestMapping(value = "register", method = RequestMethod.GET)
     public String displayRegisterForm(Model model) {
         model.addAttribute(new User());
@@ -25,7 +30,8 @@ public class UserController {
         if (errors.hasErrors()) {
             return "user/register";
         }
-        return "user/index";
+        userDao.save(user);
+        return "redirect:";
     }
     @RequestMapping(value = "login", method = RequestMethod.GET)
     public String displayLoginForm(Model model) {
@@ -39,6 +45,6 @@ public class UserController {
         if (errors.hasErrors()) {
             return "user/login";
         }
-        return "user/index";
+        return "redirect:";
     }
 }

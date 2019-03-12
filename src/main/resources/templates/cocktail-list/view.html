@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container" th:object="${cocktailList}">
+
+<h1 th:text="${cocktailList.name}"></h1>
+
+<nav th:replace="fragments::navigation"></nav>
+
+<ul>
+    <li th:each="cocktail : ${cocktailList.cocktails}" th:text="${cocktail.name}">
+    </li>
+</ul>
+<p th:unless="${cocktailList.cocktails.size()}">No Cocktails Yet</p>
+
+<p><a th:href="'/cocktail-list/add-item/' + ${cocktailList.id}">Add a Cocktail</a></p>
+
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<form method="post" style="max-width:600px;" th:object="${form}" action="/cocktail-list/add-item">
+
+    <div class="form-group">
+        <label th:for="cocktailId">Cocktail</label>
+        <select name="cocktailId">
+            <option th:each="cocktail : *{cocktails}"
+                    th:text="${cocktail.name}"
+                    th:value="${cocktail.id}">
+                <span th:errors="*{cocktail.id}" class="error"></span>
+            </option>
+        </select>
+    </div>
+
+    <input type="hidden" name="cocktailListId" th:value="*{cocktailList.id}" />
+    <input type="submit" value="Add Cocktail"/>
+
+</form>
+
+</body>
+</html>
