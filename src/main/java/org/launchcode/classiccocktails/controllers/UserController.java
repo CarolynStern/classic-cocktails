@@ -45,6 +45,6 @@ public class UserController {
         if (errors.hasErrors()) {
             return "user/login";
         }
-        return "redirect:";
+        return "cocktail/index";
     }
 }
